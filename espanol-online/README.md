@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# 🇪🇸 EspañolOnline - Онлайн-школа испанского языка
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Полноценная платформа для изучения испанского языка с **450 уроками** от Базового уровня до C1.
 
-Currently, two official plugins are available:
+## ✨ Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📚 Контент
+- **450 уроков** распределенных по 6 уровням CEFR
+- **Базовый** (50 уроков) - алфавит, произношение, базовые фразы
+- **A1** (80 уроков) - элементарный уровень
+- **A2** (80 уроков) - предпороговый уровень
+- **B1** (80 уроков) - пороговый уровень + Subjuntivo настоящее
+- **B2** (80 уроков) - пороговый продвинутый + Subjuntivo прошедшее
+- **C1** (80 уроков) - продвинутый уровень
 
-## React Compiler
+### 🎯 Функции
+- **6 типов тестов**: множественный выбор, заполнить пропуски, сопоставление, аудио, перевод, составление предложений
+- **Словарь** с примерами использования в каждом уроке
+- **Грамматика** с правилами и примерами
+- **Тексты для чтения** адаптированные под уровень
+- **Система прогресса** для отслеживания обучения
+- **Личный кабинет** с dashboard и статистикой
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💳 Подписки
+- **Free** (0₽) - 10% уроков каждого уровня
+- **Месячный** (990₽/мес) - полный доступ ко всем урокам
+- **Квартальный** (2490₽) - скидка 15%
+- **Годовой** (7990₽) - скидка 33%
 
-## Expanding the ESLint configuration
+### 👤 Роли
+- **Гость** - просмотр описания, первые уроки бесплатно
+- **Пользователь** - доступ согласно подписке
+- **Админ** - управление контентом и пользователями
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Технологии
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS (минималистичный дизайн)
+- **Routing**: React Router v6
+- **State**: Zustand
+- **Backend**: Firebase (Auth + Firestore)
+- **Deploy**: GitHub Pages via GitHub Actions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Быстрый старт
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Установить зависимости
+npm install
+
+# Запустить dev сервер
+npm run dev
+
+# Собрать для production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Структура проекта
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+espanol-online/
+├── src/
+│   ├── types/           # TypeScript типы
+│   ├── lib/             # Firebase, Store
+│   ├── data/            # Генератор 450 уроков
+│   └── App.tsx          # Главное приложение (все страницы)
+├── .github/workflows/   # GitHub Actions CI/CD
+└── README.md
+```
+
+## 🎨 Дизайн
+
+Минималистичный дизайн в стиле Cursor/ChatGPT:
+- **Primary**: #1A1A1A (темно-серый)
+- **Accent**: #FF6B35 (теплый оранжевый)
+- Нейтральная палитра без фиолетового
+- Чистые карточки, плавные переходы
+
+## 📱 Страницы
+
+1. **/** - Главная (Landing)
+2. **/levels** - Все уровни
+3. **/levels/:id** - Уроки уровня
+4. **/lessons/:id** - Детальная страница урока
+5. **/pricing** - Тарифные планы
+6. **/login** - Вход/Регистрация
+7. **/dashboard** - Личный кабинет
+8. **/admin** - Админ-панель
+9. **/legal/:type** - Юридические документы
+
+## 🔧 Настройка Firebase
+
+1. Создайте проект в [Firebase Console](https://console.firebase.google.com/)
+2. Включите Authentication (Email/Password)
+3. Создайте Firestore Database
+4. Скопируйте `.env.example` в `.env`
+5. Заполните переменные окружения
+
+## 📈 GitHub Pages Deployment
+
+Проект автоматически деплоится на GitHub Pages при push в main или ветки claude/*.
+
+1. Включите GitHub Pages в Settings → Pages
+2. Source: GitHub Actions
+3. Push в ветку - автоматический деплой!
+
+## 📝 Лицензия
+
+MIT
+
+---
+
+Создано с ❤️ для изучения испанского языка
