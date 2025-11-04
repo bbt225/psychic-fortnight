@@ -173,18 +173,25 @@ const Pricing = () => {
 };
 
 const Login = () => {
-  const setUser = useStore(s => s.setUser);
+  const login = useStore(s => s.login);
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="card max-w-md w-full">
         <h1 className="text-3xl font-bold mb-6">Вход</h1>
-        <input type="email" placeholder="Email" className="input mb-4" />
-        <input type="password" placeholder="Пароль" className="input mb-6" />
-        <button onClick={() => setUser({ id: '1', email: 'test@test.com', role: 'premium', subscription: 'annual', profile: { firstName: 'Test', lastName: 'User', currentLevel: 'A1', totalXP: 0, streak: 0 }, createdAt: '' })} className="btn-primary w-full">
+        <input id="email" type="email" placeholder="Email" className="input mb-4" />
+        <input id="password" type="password" placeholder="Пароль" className="input mb-6" />
+        <button onClick={() => {
+          const email = (document.getElementById('email') as HTMLInputElement).value || 'demo@espanol.com';
+          const password = (document.getElementById('password') as HTMLInputElement).value || 'demo';
+          login(email, password);
+        }} className="btn-primary w-full">
           Войти
         </button>
         <p className="mt-4 text-center text-sm">
           Нет аккаунта? <Link to="/register" className="text-accent">Регистрация</Link>
+        </p>
+        <p className="mt-2 text-center text-xs text-gray-500">
+          Подсказка: используйте любой email (admin@test.com для админа)
         </p>
       </div>
     </div>
