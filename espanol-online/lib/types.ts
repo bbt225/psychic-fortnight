@@ -2,7 +2,9 @@ export type CEFRLevel = 'Базовый' | 'A1' | 'A2' | 'B1' | 'B2' | 'C1'
 
 export type SubscriptionPlan = 'free' | 'monthly' | 'quarterly' | 'annual'
 
-export type UserRole = 'user' | 'premium' | 'admin'
+export type UserRole = 'guest' | 'user' | 'premium' | 'admin'
+
+export type SubscriptionStatus = 'active' | 'cancelled' | 'expired'
 
 export interface User {
   id: string
@@ -10,6 +12,19 @@ export interface User {
   name: string
   role: UserRole
   subscription: SubscriptionPlan
+  avatar?: string
+  createdAt?: Date
+}
+
+export interface UserProfile {
+  userId: string
+  firstName: string
+  lastName: string
+  currentLevel: CEFRLevel
+  totalXP: number
+  streak: number
+  studiedWords: string[]
+  favoriteLE: string[]
 }
 
 export type TestType =
@@ -59,4 +74,32 @@ export interface Progress {
   score: number
   completed: boolean
   completedAt?: Date
+}
+
+export interface SubscriptionTier {
+  plan: SubscriptionPlan
+  name: string
+  price: number
+  priceMonthly: number
+  discount: number
+  features: string[]
+  accessPercentage: number
+}
+
+export interface PaymentHistory {
+  id: string
+  userId: string
+  amount: number
+  plan: SubscriptionPlan
+  status: 'success' | 'failed'
+  createdAt: Date
+}
+
+export interface UserStats {
+  lessonsCompleted: number
+  testsCompleted: number
+  averageScore: number
+  wordsLearned: number
+  studyTime: number
+  streak: number
 }
