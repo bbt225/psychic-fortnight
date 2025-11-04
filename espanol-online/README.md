@@ -1,112 +1,36 @@
-# 🇪🇸 EspañolOnline - Онлайн-школа испанского языка
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Полноценная платформа для изучения испанского языка с **450 уроками** от Базового уровня до C1.
+## Getting Started
 
-## ✨ Возможности
-
-### 📚 Контент
-- **450 уроков** распределенных по 6 уровням CEFR
-- **Базовый** (50 уроков) - алфавит, произношение, базовые фразы
-- **A1** (80 уроков) - элементарный уровень
-- **A2** (80 уроков) - предпороговый уровень
-- **B1** (80 уроков) - пороговый уровень + Subjuntivo настоящее
-- **B2** (80 уроков) - пороговый продвинутый + Subjuntivo прошедшее
-- **C1** (80 уроков) - продвинутый уровень
-
-### 🎯 Функции
-- **6 типов тестов**: множественный выбор, заполнить пропуски, сопоставление, аудио, перевод, составление предложений
-- **Словарь** с примерами использования в каждом уроке
-- **Грамматика** с правилами и примерами
-- **Тексты для чтения** адаптированные под уровень
-- **Система прогресса** для отслеживания обучения
-- **Личный кабинет** с dashboard и статистикой
-
-### 💳 Подписки
-- **Free** (0₽) - 10% уроков каждого уровня
-- **Месячный** (990₽/мес) - полный доступ ко всем урокам
-- **Квартальный** (2490₽) - скидка 15%
-- **Годовой** (7990₽) - скидка 33%
-
-### 👤 Роли
-- **Гость** - просмотр описания, первые уроки бесплатно
-- **Пользователь** - доступ согласно подписке
-- **Админ** - управление контентом и пользователями
-
-## 🛠 Технологии
-
-- **Frontend**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS (минималистичный дизайн)
-- **Routing**: React Router v6
-- **State**: Zustand
-- **Backend**: Firebase (Auth + Firestore)
-- **Deploy**: GitHub Pages via GitHub Actions
-
-## 🚀 Быстрый старт
+First, run the development server:
 
 ```bash
-# Установить зависимости
-npm install
-
-# Запустить dev сервер
 npm run dev
-
-# Собрать для production
-npm run build
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 📦 Структура проекта
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-espanol-online/
-├── src/
-│   ├── types/           # TypeScript типы
-│   ├── lib/             # Firebase, Store
-│   ├── data/            # Генератор 450 уроков
-│   └── App.tsx          # Главное приложение (все страницы)
-├── .github/workflows/   # GitHub Actions CI/CD
-└── README.md
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🎨 Дизайн
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Минималистичный дизайн в стиле Cursor/ChatGPT:
-- **Primary**: #1A1A1A (темно-серый)
-- **Accent**: #FF6B35 (теплый оранжевый)
-- Нейтральная палитра без фиолетового
-- Чистые карточки, плавные переходы
+## Learn More
 
-## 📱 Страницы
+To learn more about Next.js, take a look at the following resources:
 
-1. **/** - Главная (Landing)
-2. **/levels** - Все уровни
-3. **/levels/:id** - Уроки уровня
-4. **/lessons/:id** - Детальная страница урока
-5. **/pricing** - Тарифные планы
-6. **/login** - Вход/Регистрация
-7. **/dashboard** - Личный кабинет
-8. **/admin** - Админ-панель
-9. **/legal/:type** - Юридические документы
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🔧 Настройка Firebase
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-1. Создайте проект в [Firebase Console](https://console.firebase.google.com/)
-2. Включите Authentication (Email/Password)
-3. Создайте Firestore Database
-4. Скопируйте `.env.example` в `.env`
-5. Заполните переменные окружения
+## Deploy on Vercel
 
-## 📈 GitHub Pages Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Проект автоматически деплоится на GitHub Pages при push в main или ветки claude/*.
-
-1. Включите GitHub Pages в Settings → Pages
-2. Source: GitHub Actions
-3. Push в ветку - автоматический деплой!
-
-## 📝 Лицензия
-
-MIT
-
----
-
-Создано с ❤️ для изучения испанского языка
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
